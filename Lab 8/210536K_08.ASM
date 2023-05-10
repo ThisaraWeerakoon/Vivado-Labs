@@ -1,4 +1,4 @@
- ===== CONTROL THE TRAFFIC LIGHTS =============================
+; ===== CONTROL THE TRAFFIC LIGHTS =============================
 
         CLO             ; Close unwanted windows.
 Start:
