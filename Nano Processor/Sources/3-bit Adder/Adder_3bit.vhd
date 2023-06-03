@@ -51,6 +51,8 @@ signal B : STD_LOGIC_VECTOR (2 downto 0) ; -- B input 001 always as a 3 bit bus
 
 begin
 
+B <= "001";
+
 FA_0 : FA
 port map (
 A => A(0),
@@ -75,6 +77,5 @@ C_in => FA1_C,
 S => S(2),
 C_Out => FA2_C);
 
-B <= "001" ; -- since always add +1
 
 end Behavioral;
