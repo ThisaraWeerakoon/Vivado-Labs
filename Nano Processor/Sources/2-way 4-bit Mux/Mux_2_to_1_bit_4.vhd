@@ -82,7 +82,7 @@ port map(
 Mux_2_to_1_3 :  Mux_2_to_1
 port map(
     S => S,
-    D => Mux_2_D,
+    D => Mux_3_D,
     EN=> '1',
     Y => Y(3)
 
