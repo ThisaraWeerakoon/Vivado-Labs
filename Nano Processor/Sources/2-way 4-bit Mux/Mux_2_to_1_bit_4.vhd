@@ -84,7 +84,7 @@ port map(
     S => S,
     D => Mux_2_D,
     EN=> '1',
-    Y => Y(2)
+    Y => Y(3)
 
 );
 
