@@ -51,6 +51,7 @@ signal Res : STD_LOGIC;
 signal Clk : STD_LOGIC;
 signal Q : STD_LOGIC_VECTOR(2 downto 0);
 
+constant period : time := 80 ns;
 
 begin
    
@@ -65,10 +66,10 @@ UUT : ProgramCounter PORT MAP (
 process 
 begin
     Clk <= '0';
-    wait for 40 ns;
+    wait for period/2;
     
     Clk <= '1';
-    wait for 40 ns ;
+    wait for period/2 ;
     
 end process;
 
@@ -83,23 +84,23 @@ Res <= '0';
 
 D <= "000";
 
-wait for 80 ns;
+wait for period;
 
 D <= "100";
 
-wait for 80 ns;
+wait for period;
 
 D <= "011";
 
-wait for 80 ns;
+wait for period;
 
 D <= "111";
 
-wait for 80 ns;
+wait for period;
 
 Res <= '1';
 
-wait for 80 ns;
+wait for period;
 
 Res <= '0';
 
@@ -108,11 +109,5 @@ D <= "101";
 wait;
 
 end process;
-
-
-
-
-
-
 
 end Behavioral;
