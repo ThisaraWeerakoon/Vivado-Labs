@@ -283,4 +283,11 @@ port map(
     Y => RegBank_D
 );
 
+Slow_Clk_0 : Slow_Clk
+port map( 
+    Clk_in => Clk,
+    Clk_out => SlowClk
+);
+
+
 end Behavioral;
