@@ -127,13 +127,6 @@ RegBank_Q_7 : out STD_LOGIC_VECTOR(3 downto 0)  -- output of register 7
  );
 end component; 
 
-component Slow_Clk
-   Port ( Clk_in : in STD_LOGIC;
-        Clk_out : out STD_LOGIC);
-end component;
-
-signal SlowClk : STD_LOGIC ;
-
 signal Out_Mux_2_to_1_bit_3 : STD_LOGIC_VECTOR(2 downto 0);
 
 signal MemorySelect : STD_LOGIC_VECTOR(2 downto 0);
@@ -187,7 +180,7 @@ ProgramCounter_0 : ProgramCounter
 port map(
     D => Out_Mux_2_to_1_bit_3,
     Res => Res,
-    Clk => SlowClk,
+    Clk => Clk,
     Q => MemorySelect
     
 );
@@ -220,7 +213,7 @@ port map(
      port map(
      
      RegBank_EN => RegisterEnable, -- Register enable which selects the register
-     RegBank_Clk => SlowClk, 
+     RegBank_Clk => Clk, 
      RegBank_Res => Res, 
      RegBank_D => RegBank_D , -- input of register bank
      
@@ -283,11 +276,6 @@ port map(
     Y => RegBank_D
 );
 
-Slow_Clk_0 : Slow_Clk
-port map( 
-    Clk_in => Clk,
-    Clk_out => SlowClk
-);
 
 
 end Behavioral;
