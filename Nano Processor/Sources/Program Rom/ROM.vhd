@@ -41,6 +41,7 @@ end ROM;
 architecture Behavioral of ROM is
 type rom_type is array (0 to 7) of std_logic_vector(11 downto 0);
     signal program_ROM : rom_type := (
+        "101110000000"  -- MOVI R7,0
         "100010000001", -- MOVI R1,1
         "100100000010", -- MOVI R2,2
         "100110000011", -- MOVI R3,3
@@ -48,7 +49,7 @@ type rom_type is array (0 to 7) of std_logic_vector(11 downto 0);
         "001110100000", -- ADD  R7,R2
         "001110110000", -- ADD  R7,R3
         "110000000110", -- JZR  R0,6
-        "000000000000"
+        
     );
 begin
     data <= program_ROM(to_integer(unsigned(address)));
