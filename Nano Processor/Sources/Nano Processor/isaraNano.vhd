@@ -122,33 +122,33 @@ component Register_Bank_8
            R7_out : out STD_LOGIC_VECTOR (3 downto 0));
 end component;
 
-signal bus0 :std_logic_vector(2 downto 0) :="000";
-signal bus1 :std_logic_vector(2 downto 0) :="000";
-signal bus3 :std_logic_vector(2 downto 0) :="000";
-signal bus4 :std_logic_vector(2 downto 0) :="000";
-signal bus6 :std_logic_vector(2 downto 0) :="000";
-signal bus9 :std_logic_vector(2 downto 0) :="000";
-signal bus10 :std_logic_vector(2 downto 0) :="000";
+signal bus0 :std_logic_vector(2 downto 0) :="000"; -- out mux 2 to 1 bit 3
+signal bus1 :std_logic_vector(2 downto 0) :="000"; -- memory select
+signal bus3 :std_logic_vector(2 downto 0) :="000"; -- out adder 3 bit
+signal bus4 :std_logic_vector(2 downto 0) :="000"; -- jumpadress
+signal bus6 :std_logic_vector(2 downto 0) :="000"; -- register enable
+signal bus9 :std_logic_vector(2 downto 0) :="000"; -- register selector A
+signal bus10 :std_logic_vector(2 downto 0) :="000";-- register selector B
 
-signal bus2 : std_logic_vector(11 downto 0):="000000000000";
+signal bus2 : std_logic_vector(11 downto 0):="000000000000";--instruction bus
 
-signal bus8 : std_logic_vector(3 downto 0):="0000";
-signal bus13 : std_logic_vector(3 downto 0):="0000";
-signal bus14 : std_logic_vector(3 downto 0):="0000";
-signal bus15 : std_logic_vector(3 downto 0):="0000";
-signal bus16 : std_logic_vector(3 downto 0):="0000";
-signal bus17 : std_logic_vector(3 downto 0):="0000";
-signal bus18 : std_logic_vector(3 downto 0):="0000";
-signal bus19 : std_logic_vector(3 downto 0):="0000";
-signal bus20 : std_logic_vector(3 downto 0):="0000";
-signal bus21 : std_logic_vector(3 downto 0):="0000";
-signal bus22 : std_logic_vector(3 downto 0):="0000";
-signal bus23 : std_logic_vector(3 downto 0):="0000";
-signal bus24 : std_logic_vector(3 downto 0):="0000";
+signal bus8 : std_logic_vector(3 downto 0):="0000"; -- immediate value
+signal bus13 : std_logic_vector(3 downto 0):="0000"; -- regjumpcheck
+signal bus14 : std_logic_vector(3 downto 0):="0000"; -- out mux B
+signal bus15 : std_logic_vector(3 downto 0):="0000"; -- out AS unit
+signal bus16 : std_logic_vector(3 downto 0):="0000"; -- Regbank D
+signal bus17 : std_logic_vector(3 downto 0):="0000"; -- Regbank Q 0
+signal bus18 : std_logic_vector(3 downto 0):="0000"; -- Regbank Q 1
+signal bus19 : std_logic_vector(3 downto 0):="0000"; -- Regbank Q 2
+signal bus20 : std_logic_vector(3 downto 0):="0000"; -- Regbank Q 3
+signal bus21 : std_logic_vector(3 downto 0):="0000"; -- Regbank Q 4
+signal bus22 : std_logic_vector(3 downto 0):="0000"; -- Regbank Q 5
+signal bus23 : std_logic_vector(3 downto 0):="0000"; -- Regbank Q 6
+signal bus24 : std_logic_vector(3 downto 0):="0000"; -- Regbank Q 7
 
-signal bus5 : std_logic;
-signal bus7 : std_logic;
-signal bus11 : std_logic;
+signal bus5 : std_logic; -- jump flag
+signal bus7 : std_logic; -- load selector
+signal bus11 : std_logic; -- addsubselector
 begin
 
 Program_Counter_3bit_Zero : Program_Counter_3bit
